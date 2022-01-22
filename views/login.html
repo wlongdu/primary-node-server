@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="css/index.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<div class="app-container">
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <div id="error-message" class="error-message"></div>
+        <div class="form-item"><input id="username" placeholder="用户名：admin" type="text"/></div>
+        <div class="form-item"><input id="password" placeholder="密码：admin" type="password"/></div>
+        <div class="form-item">
+            <button class="button" id="loginBtn">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#loginBtn").click(function () {
+            $('#error-message').html('');
+            const username = $('#username').val();
+            const password = $('#password').val();
+            if (!username) {
+                $('#error-message').html('请输入用户名！');
+                return;
+            }
+            if (!password) {
+                $('#error-message').html('请输入密码！');
+                return;
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/api/login',
+                data: {
+                    username,
+                    password,
+                }
+            }).then(response => {
+                const {message, status} = response;
+                if (status) {
+                    location.href = 'http://www.airchinacc.com/';
+                    return;
+                }
+                $('#error-message').html(message);
+            })
+        })
+    })
+</script>
+</body>
+</html>

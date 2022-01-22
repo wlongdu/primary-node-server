@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JD首页</title>
+    <link href="css/index.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="home-container">
+    <header class="header">
+        <div class="rightOption">
+            <a href="/logout" class="button">退出</a>
+        </div>
+    </header>
+    <div id="body" class="content">
+        <iframe id="contentFrame" src="http://www.airchinacc.com/trade/" frameborder="0" width="100%"></iframe>
+    </div>
+</div>
+<script type="text/javascript">
+    function changeFrameHeight() {
+        let ifm = document.getElementById("contentFrame");
+        ifm.height = document.getElementById('body').offsetHeight;
+    }
+
+    window.onresize = function () {
+        changeFrameHeight();
+    }
+    window.onload = function () {
+        changeFrameHeight();
+    }
+</script>
+</body>
+</html>

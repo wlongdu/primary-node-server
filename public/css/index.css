@@ -1,0 +1,113 @@
+@import "normalize.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background: #ffffff;
+    font-size: 14px;
+    height: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: #dddddd;
+}
+
+::-ms-input-placeholder {
+    color: #dddddd;
+}
+
+::-moz-placeholder {
+    color: #dddddd;
+}
+
+.header {
+    padding: 5px 15px;
+    border-bottom: #dddddd 1px solid;
+    overflow: hidden;
+}
+
+.header .rightOption {
+    float: right;
+    width: 100px;
+}
+
+.app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.login-container {
+    border: #dddddd 1px solid;
+    padding: 24px;
+    margin: auto;
+    border-radius: 5px;
+    width: 40%;
+    box-shadow: 0 0 30px 0 #dddddd;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #dddddd;
+}
+
+.login-container .error-message {
+    color: #ff0000;
+    margin-bottom: 15px;
+}
+
+.form-item + .form-item {
+    margin-top: 24px;
+}
+
+.form-item input, .button {
+    line-height: 24px;
+    padding: 10px;
+    outline: none;
+    border: #dddddd 1px solid;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+}
+
+.form-item label {
+    display: inline-block;
+    width: 60px;
+}
+
+.form-item input:focus, .form-item button:focus {
+    border-color: #1890ff;
+}
+
+.button {
+    background: #1890ff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button:active {
+    background: #096dd9;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.home-container .content {
+    flex: 1;
+    background: #ff0000;
+}
